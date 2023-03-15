@@ -5,7 +5,7 @@ class AppTheme {
 
   ThemeData getTheme() => ThemeData(
     useMaterial3: true,
-    colorSchemeSeed: Colors.black,
+    colorSchemeSeed: const Color(0xff424CB8),
     textTheme: TextTheme(
       titleLarge: GoogleFonts.montserratAlternates()
         .copyWith( fontSize: 40 )

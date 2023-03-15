@@ -9,6 +9,7 @@ class GeometricalBackground extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    final colors = Theme.of(context).colorScheme;
     final borderSize = size.width / 7; // Este es el tamaño para colocar 7 elementos
 
 
@@ -30,8 +31,8 @@ class GeometricalBackground extends StatelessWidget {
           // Background with shapes
           Container(
             clipBehavior: Clip.hardEdge,
-            decoration: const BoxDecoration(
-              color: Colors.black
+            decoration: BoxDecoration(
+              color: colors.primary,
             ),
             child: Column(
               children: [

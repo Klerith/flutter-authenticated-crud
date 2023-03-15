@@ -37,7 +37,7 @@ class CustomTextFormField extends StatelessWidget {
       obscureText: obscureText,
       decoration: InputDecoration(
         enabledBorder: border,
-        focusedBorder: border.copyWith( borderSide: BorderSide( color: colors.primary )),
+        focusedBorder: border.copyWith( borderSide: const BorderSide( color: Colors.black )),
         errorBorder: border.copyWith( borderSide: BorderSide( color: Colors.red.shade800 )),
         focusedErrorBorder: border.copyWith( borderSide: BorderSide( color: Colors.red.shade800 )),
 
