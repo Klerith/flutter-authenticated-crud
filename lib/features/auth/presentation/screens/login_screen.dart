@@ -9,6 +9,7 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
 
     final size = MediaQuery.of(context).size;
+    final scaffoldBackgroundColor = Theme.of(context).scaffoldBackgroundColor;
 
     return Scaffold(
       body: GeometricalBackground( 
@@ -29,9 +30,9 @@ class LoginScreen extends StatelessWidget {
               Container(
                 height: size.height - 260, // 80 los dos sizebox y 100 el ícono
                 width: double.infinity,
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(topLeft: Radius.circular(100)),
+                decoration: BoxDecoration(
+                  color: scaffoldBackgroundColor,
+                  borderRadius: const BorderRadius.only(topLeft: Radius.circular(100)),
                 ),
                 child: const _LoginForm(),
               )
@@ -57,10 +58,20 @@ class _LoginForm extends StatelessWidget {
         children: [
           const SizedBox( height: 50 ),
           Text('Login', style: textStyles.titleLarge ),
+    
+    
           const SizedBox( height: 50 ),
-    
-    
-          CustomTextFormField(),
+
+          const CustomTextFormField(
+            label: 'Correo',
+            keyboardType: TextInputType.emailAddress,
+          ),
+          const SizedBox( height: 30 ),
+
+          const CustomTextFormField(
+            label: 'Contraseña',
+            obscureText: true,
+          ),
     
         ],
       ),
