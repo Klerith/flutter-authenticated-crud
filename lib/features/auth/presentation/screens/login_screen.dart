@@ -11,35 +11,38 @@ class LoginScreen extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     final scaffoldBackgroundColor = Theme.of(context).scaffoldBackgroundColor;
 
-    return Scaffold(
-      body: GeometricalBackground( 
-        child: SingleChildScrollView(
-          physics: const ClampingScrollPhysics(),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const SizedBox( height: 80 ),
-              // Icon Banner
-              const Icon( 
-                Icons.production_quantity_limits_rounded, 
-                color: Colors.white,
-                size: 100,
-              ),
-              const SizedBox( height: 80 ),
-
-              Container(
-                height: size.height - 260, // 80 los dos sizebox y 100 el ícono
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: scaffoldBackgroundColor,
-                  borderRadius: const BorderRadius.only(topLeft: Radius.circular(100)),
+    return GestureDetector(
+      onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+      child: Scaffold(
+        body: GeometricalBackground( 
+          child: SingleChildScrollView(
+            physics: const ClampingScrollPhysics(),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const SizedBox( height: 80 ),
+                // Icon Banner
+                const Icon( 
+                  Icons.production_quantity_limits_rounded, 
+                  color: Colors.white,
+                  size: 100,
                 ),
-                child: const _LoginForm(),
-              )
-            ],
-          ),
+                const SizedBox( height: 80 ),
+    
+                Container(
+                  height: size.height - 260, // 80 los dos sizebox y 100 el ícono
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: scaffoldBackgroundColor,
+                    borderRadius: const BorderRadius.only(topLeft: Radius.circular(100)),
+                  ),
+                  child: const _LoginForm(),
+                )
+              ],
+            ),
+          )
         )
-      )
+      ),
     );
   }
 }
@@ -58,9 +61,7 @@ class _LoginForm extends StatelessWidget {
         children: [
           const SizedBox( height: 50 ),
           Text('Login', style: textStyles.titleLarge ),
-    
-    
-          const SizedBox( height: 50 ),
+          const SizedBox( height: 90 ),
 
           const CustomTextFormField(
             label: 'Correo',
@@ -73,6 +74,27 @@ class _LoginForm extends StatelessWidget {
             obscureText: true,
           ),
     
+          const SizedBox( height: 30 ),
+
+          SizedBox(
+            width: double.infinity,
+            height: 50,
+            child: CustomFilledButton(
+              text: 'Ingresar',
+              onPressed: (){
+
+              },
+            )
+          ),
+
+          const Spacer( flex: 2 ),
+
+          GestureDetector(
+            onTap: () {},
+            child: const Text('¿No tienes cuenta?, Crea una aquí')
+          ),
+
+          const Spacer( flex: 1),
         ],
       ),
     );
