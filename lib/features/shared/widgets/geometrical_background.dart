@@ -54,7 +54,10 @@ class GeometricalBackground extends StatelessWidget {
   }
 }
 
-class ShapeRow extends StatelessWidget {
+/// El objetivo de este widget es crear una final de figuras geometricas
+/// Es Stateful porque quiero mantener el estado del mismo
+/// El initState rompe la referencia para que lo pueda usar en varios lugares
+class ShapeRow extends StatefulWidget {
   const ShapeRow({
     super.key,
     required this.shapeWidgets,
@@ -63,9 +66,23 @@ class ShapeRow extends StatelessWidget {
   final List<Widget> shapeWidgets;
 
   @override
+  State<ShapeRow> createState() => _ShapeRowState();
+}
+
+class _ShapeRowState extends State<ShapeRow> {
+
+  late List<Widget> shapeMixedUp;
+
+  @override
+  void initState() {
+    super.initState();
+    shapeMixedUp = [...widget.shapeWidgets];
+    shapeMixedUp.shuffle();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    shapeWidgets.shuffle();
-    return Row(children: shapeWidgets);
+    return Row(children: shapeMixedUp);
   }
 }
 

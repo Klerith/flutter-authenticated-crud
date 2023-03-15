@@ -17,17 +17,17 @@ class LoginScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const SizedBox( height: 50 ),
+              const SizedBox( height: 80 ),
               // Icon Banner
               const Icon( 
                 Icons.production_quantity_limits_rounded, 
                 color: Colors.white,
                 size: 100,
               ),
-              const SizedBox( height: 50 ),
+              const SizedBox( height: 80 ),
 
               Container(
-                height: size.height - 200, // 80 los dos sizebox y 100 el ícono
+                height: size.height - 260, // 80 los dos sizebox y 100 el ícono
                 width: double.infinity,
                 decoration: const BoxDecoration(
                   color: Colors.white,
@@ -51,11 +51,19 @@ class _LoginForm extends StatelessWidget {
 
     final textStyles = Theme.of(context).textTheme;
 
-    return Column(
-      children: [
-        const SizedBox( height: 50 ),
-        Text('Login', style: textStyles.titleLarge )
-      ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 50),
+      child: Column(
+        children: [
+          const SizedBox( height: 50 ),
+          Text('Login', style: textStyles.titleLarge ),
+          const SizedBox( height: 50 ),
+    
+    
+          CustomTextFormField(),
+    
+        ],
+      ),
     );
   }
 }
