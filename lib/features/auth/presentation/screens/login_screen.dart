@@ -78,9 +78,10 @@ class _LoginForm extends StatelessWidget {
 
           SizedBox(
             width: double.infinity,
-            height: 50,
+            height: 60,
             child: CustomFilledButton(
               text: 'Ingresar',
+              buttonColor: Colors.black,
               onPressed: (){
 
               },

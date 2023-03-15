@@ -8,7 +8,7 @@ class AppTheme {
     colorSchemeSeed: const Color(0xff424CB8),
     textTheme: TextTheme(
       titleLarge: GoogleFonts.montserratAlternates()
-        .copyWith( fontSize: 40 )
+        .copyWith( fontSize: 40, fontWeight: FontWeight.bold )
     ),
     scaffoldBackgroundColor: const Color(0xFFF8F7F7)
   );
