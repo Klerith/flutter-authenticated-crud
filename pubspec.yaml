@@ -12,6 +12,7 @@ dependencies:
     sdk: flutter
   flutter_riverpod: ^2.3.2
   go_router: ^6.2.0
+  google_fonts: ^4.0.3
 
 dev_dependencies:
   flutter_lints: ^2.0.0
@@ -20,3 +21,6 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - google_fonts/montserrat_alternates/

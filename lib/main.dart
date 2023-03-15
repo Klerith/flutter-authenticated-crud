@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:teslo_shop/config/config.dart';
 import 'package:teslo_shop/config/router/app_router.dart';
 
 void main() {
@@ -12,6 +13,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       routerConfig: appRouter,
+      theme: AppTheme().getTheme(),
       debugShowCheckedModeBanner: false,
     );
   }
