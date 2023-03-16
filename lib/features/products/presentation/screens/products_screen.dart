@@ -8,6 +8,12 @@ class ProductsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Products'),
+        actions: [
+          IconButton(
+            onPressed: (){}, 
+            icon: const Icon( Icons.search_rounded)
+          )
+        ],
       ),
     );
   }
