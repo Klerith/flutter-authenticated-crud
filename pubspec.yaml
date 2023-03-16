@@ -23,4 +23,5 @@ flutter:
   uses-material-design: true
 
   assets:
+    - assets/loaders/
     - google_fonts/montserrat_alternates/
