@@ -90,9 +90,15 @@ class _LoginForm extends StatelessWidget {
 
           const Spacer( flex: 2 ),
 
-          GestureDetector(
-            onTap: () {},
-            child: const Text('¿No tienes cuenta?, Crea una aquí')
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text('¿No tienes cuenta?'),
+              TextButton(
+                onPressed: (){}, 
+                child: const Text('Crea una aquí')
+              )
+            ],
           ),
 
           const Spacer( flex: 1),
