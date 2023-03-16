@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:teslo_shop/features/shared/shared.dart';
 
 
@@ -95,7 +96,7 @@ class _LoginForm extends StatelessWidget {
             children: [
               const Text('¿No tienes cuenta?'),
               TextButton(
-                onPressed: (){}, 
+                onPressed: ()=> context.push('/register'), 
                 child: const Text('Crea una aquí')
               )
             ],

@@ -122,8 +122,11 @@ class _RegisterForm extends StatelessWidget {
               const Text('¿Ya tienes cuenta?'),
               TextButton(
                 onPressed: (){
-                  if ( !context.canPop()) return;
-                  context.pop();
+                  if ( context.canPop()){
+                    return context.pop();
+                  }
+                  context.go('/login');
+                  
                 }, 
                 child: const Text('Ingresa aquí')
               )
