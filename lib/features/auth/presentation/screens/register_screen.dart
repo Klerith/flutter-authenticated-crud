@@ -49,7 +49,7 @@ class RegisterScreen extends StatelessWidget {
                     color: scaffoldBackgroundColor,
                     borderRadius: const BorderRadius.only(topLeft: Radius.circular(100)),
                   ),
-                  child: const _LoginForm(),
+                  child: const _RegisterForm(),
                 )
               ],
             ),
@@ -60,8 +60,8 @@ class RegisterScreen extends StatelessWidget {
   }
 }
 
-class _LoginForm extends StatelessWidget {
-  const _LoginForm();
+class _RegisterForm extends StatelessWidget {
+  const _RegisterForm();
 
   @override
   Widget build(BuildContext context) {
@@ -73,8 +73,14 @@ class _LoginForm extends StatelessWidget {
       child: Column(
         children: [
           const SizedBox( height: 50 ),
-          Text('Login', style: textStyles.titleLarge ),
-          const SizedBox( height: 90 ),
+          Text('Nueva cuenta', style: textStyles.titleMedium ),
+          const SizedBox( height: 50 ),
+
+          const CustomTextFormField(
+            label: 'Nombre completo',
+            keyboardType: TextInputType.emailAddress,
+          ),
+          const SizedBox( height: 30 ),
 
           const CustomTextFormField(
             label: 'Correo',
@@ -89,11 +95,18 @@ class _LoginForm extends StatelessWidget {
     
           const SizedBox( height: 30 ),
 
+          const CustomTextFormField(
+            label: 'Repita la contraseña',
+            obscureText: true,
+          ),
+    
+          const SizedBox( height: 30 ),
+
           SizedBox(
             width: double.infinity,
             height: 60,
             child: CustomFilledButton(
-              text: 'Ingresar',
+              text: 'Crear',
               buttonColor: Colors.black,
               onPressed: (){
 
@@ -106,10 +119,13 @@ class _LoginForm extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text('¿No tienes cuenta?'),
+              const Text('¿Ya tienes cuenta?'),
               TextButton(
-                onPressed: (){}, 
-                child: const Text('Crea una aquí')
+                onPressed: (){
+                  if ( !context.canPop()) return;
+                  context.pop();
+                }, 
+                child: const Text('Ingresa aquí')
               )
             ],
           ),
