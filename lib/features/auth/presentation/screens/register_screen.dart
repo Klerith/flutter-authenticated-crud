@@ -40,7 +40,7 @@ class RegisterScreen extends StatelessWidget {
                   ],
                 ),
 
-                const SizedBox( height: 80 ),
+                const SizedBox( height: 50 ),
     
                 Container(
                   height: size.height - 260, // 80 los dos sizebox y 100 el ícono
