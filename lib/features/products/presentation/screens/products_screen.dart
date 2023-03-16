@@ -20,6 +20,22 @@ class ProductsScreen extends StatelessWidget {
           )
         ],
       ),
+      body: const _ProductsView(),
+      floatingActionButton: FloatingActionButton.extended(
+        label: const Text('Nuevo producto'),
+        icon: const Icon( Icons.add ),
+        onPressed: () {},
+      ),
     );
+  }
+}
+
+
+class _ProductsView extends StatelessWidget {
+  const _ProductsView();
+
+  @override
+  Widget build(BuildContext context) {
+    return const Center(child: Text('Eres genial!'));
   }
 }
