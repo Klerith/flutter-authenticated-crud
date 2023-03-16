@@ -57,13 +57,6 @@ class _SideMenuState extends State<SideMenu> {
             label: Text( 'Productos' ),
         ),
 
-        // ...appMenuItems
-        //   .sublist(0,3)
-        //   .map((item) => NavigationDrawerDestination(
-        //     icon: Icon( item.icon ), 
-        //     label: Text( item.title ),
-        //   ),
-        // ),
 
         const Padding(
           padding: EdgeInsets.fromLTRB(28, 16, 28, 10),
