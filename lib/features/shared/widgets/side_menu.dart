@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:teslo_shop/features/shared/shared.dart';
 
 class SideMenu extends StatefulWidget {
 
@@ -22,9 +23,11 @@ class _SideMenuState extends State<SideMenu> {
   Widget build(BuildContext context) {
 
     final hasNotch = MediaQuery.of(context).viewPadding.top > 35;
+    final textStyles = Theme.of(context).textTheme;
     
 
     return NavigationDrawer(
+      elevation: 1,
       selectedIndex: navDrawerIndex,
       onDestinationSelected: (value) {
 
@@ -40,8 +43,18 @@ class _SideMenuState extends State<SideMenu> {
       children: [
 
         Padding(
-          padding: EdgeInsets.fromLTRB(28, hasNotch ? 0 : 20, 16, 10),
-          child: const Text('Main'),
+          padding: EdgeInsets.fromLTRB(20, hasNotch ? 0 : 20, 16, 0),
+          child: Text('Saludos', style: textStyles.titleMedium ),
+        ),
+
+        Padding(
+          padding: const EdgeInsets.fromLTRB(20, 0, 16, 10),
+          child: Text('Tony Stark', style: textStyles.titleSmall ),
+        ),
+
+        const NavigationDrawerDestination(
+            icon: Icon( Icons.home_outlined ), 
+            label: Text( 'Productos' ),
         ),
 
         // ...appMenuItems
@@ -59,11 +72,17 @@ class _SideMenuState extends State<SideMenu> {
 
         const Padding(
           padding: EdgeInsets.fromLTRB(28, 10, 16, 10),
-          child: Text('More options'),
+          child: Text('Otras opciones'),
         ),
 
-
-
+        
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: CustomFilledButton(
+            onPressed: () {},
+            text: 'Cerrar sesión'
+          ),
+        ),
 
       ]
     );
