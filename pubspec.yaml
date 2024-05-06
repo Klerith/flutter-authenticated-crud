@@ -10,9 +10,12 @@ dependencies:
   dio: ^5.0.2
   flutter:
     sdk: flutter
+  flutter_dotenv: 5.0.2
   flutter_riverpod: ^2.3.2
+  formz: any
   go_router: ^6.2.0
   google_fonts: ^4.0.3
+
 
 dev_dependencies:
   flutter_lints: ^2.0.0
@@ -23,6 +26,7 @@ flutter:
   uses-material-design: true
 
   assets:
+    - .env
     - assets/loaders/
     - assets/images/
     - google_fonts/montserrat_alternates/

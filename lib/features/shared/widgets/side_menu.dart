@@ -72,7 +72,9 @@ class _SideMenuState extends State<SideMenu> {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: CustomFilledButton(
-            onPressed: () {},
+            onPressed: () {
+              context.go('/login');
+            },
             text: 'Cerrar sesión'
           ),
         ),
